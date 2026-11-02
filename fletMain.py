@@ -17,11 +17,11 @@ def main(page: ft.Page):
     )
     limit = True
     limitpic = True
-    currnetly_playing = None
+    currently_playing = None
     def check_word(e):
         nonlocal limit
         nonlocal limitpic
-        nonlocal currnetly_playing
+        nonlocal currently_playing
         typed_text = (e.control.value or "").strip().lower()
 
         secrets = {
@@ -106,7 +106,7 @@ def main(page: ft.Page):
                  
                  
             async def jumpscare():
-                await asyncio.sleep(10)
+                await asyncio.sleep(45)
                 page.clean()
                 img = ft.Image(
                                                                     src="monika.jpg",

@@ -1,5 +1,7 @@
 # Meet-Track-Dev-Task-Amit-Pasamanik
  haha hi guys 
+ although this project is unbelievably cringe and corny you said and i quote "make the app as you as possible" - so i did. this is basically the consequences of your own actions!!
+ 
 so the app is just a counter with a bunch of hidden words that help you (or not) to find the last code. it is filled with easter eggs with my interests so i dont expect you guys to be able to guess them!
 said words are:
 amit
