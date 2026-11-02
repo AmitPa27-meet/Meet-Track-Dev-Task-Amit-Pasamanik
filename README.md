@@ -1,20 +1,20 @@
 # Meet-Track-Dev-Task-Amit-Pasamanik
  haha hi guys 
  although this project is unbelievably cringe and corny you said and i quote "make the app as you as possible" - so i did. this is basically the consequences of your own actions!!
- 
+
 so the app is just a counter with a bunch of hidden words that help you (or not) to find the last code. it is filled with easter eggs with my interests so i dont expect you guys to be able to guess them!
 said words are:
-amit
-pasamanik
-just monika
-furina - plays audio + changes background + changes title of app
-verity
-birthday
-noga - plays audio
-ben - plays audio
-july
-monika (plays audio + adds picture) - (writing this twice jumpscares you (low effort but ok haha and also corny so plz forgive me)) + changes title of app
-additionaly - if you write monika and wait 45 seconds - she starts getting bigger taking up more space and eventually jumpscares you (also corny and low effort but its ok)
+amit,
+pasamanik,
+just monika,
+furina - plays audio + changes background + changes title of app,
+verity,
+birthday,
+noga - plays audio,
+ben - plays audio,
+july,
+monika - (plays audio + adds picture) - (writing this twice jumpscares you (low effort but ok haha and also corny so plz forgive me)) + changes title of app
+additionaly - if you write monika and wait 45 seconds - she starts getting bigger taking up more space and eventually jumpscares you (also corny and low effort but its ok),
 the code is : 0710 .
 also - use "amit we love your game" to ACTUALLY win the game, and get an infinite counter(easter egg  when you get to 15 clicks!) c:
 
