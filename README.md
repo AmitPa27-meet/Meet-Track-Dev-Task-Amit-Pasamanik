@@ -5,13 +5,13 @@ said words are:
 amit
 pasamanik
 just monika
-furina - plays audio + changes background
+furina - plays audio + changes background + changes title of app
 verity
 birthday
 noga - plays audio
 ben - plays audio
 july
-monika (plays audio + adds picture) - (writing this twice jumpscares you (low effort but ok haha and also corny so plz forgive me))
+monika (plays audio + adds picture) - (writing this twice jumpscares you (low effort but ok haha and also corny so plz forgive me)) + changes title of app
 the code is : 0710 .
 also - use "amit we love your game" to ACTUALLY win the game, and get an infinite counter(easter egg  when you get to 15 clicks!) c:
 
