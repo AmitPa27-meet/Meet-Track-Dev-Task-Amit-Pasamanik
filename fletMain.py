@@ -42,7 +42,7 @@ def main(page: ft.Page):
                 "color": ft.Colors.PINK,
             },
             "monika": {
-                            "text": "Hey! its me, Monika! sadly - i wont leave your screen.",
+                            "text": "Hey! its me, Monika! sadly - i wont leave your screen. so, enjoy my company!",
                             "color": ft.Colors.GREEN,
                         },
             "birthday": {
@@ -78,6 +78,7 @@ def main(page: ft.Page):
         if typed_text == "furina":
                 pygame.mixer.music.load("sinner.mp3")
                 pygame.mixer.music.play(0)
+                page.title = "Furina's Counter App"
                 page.bgcolor = ft.Colors.BLUE
         if typed_text == "noga":
                 pygame.mixer.music.load("noga.mp3")
@@ -109,6 +110,7 @@ def main(page: ft.Page):
                 height=790,
                 fit=ft.BoxFit.CONTAIN,
             )
+                page.title = "Just Monika"
                 page.add(img)
                 page.update()
                 
@@ -116,8 +118,16 @@ def main(page: ft.Page):
         if typed_text == "0710":
             page.clean()
             page.update()
-            page.bgcolor = ft.Colors.BLACK
-            page.add(ft.Text("Congratulations! You won! (pssst if you want to - restart the game and type in (amit we love your app) and the counter wont reset on you!", size=50, color=ft.Colors.GREEN))
+            page.bgcolor = ft.Colors.WHITE
+            page.add(ft.Text("Congratulations! You won! (pssst if you want to - restart the game and type in (amit we love your app) and the counter wont reset on you!)", size=50, color=ft.Colors.GREEN))
+            img = ft.Image(
+                            src="win_resized.gif",
+                            width=600,
+                            height=600,
+                            fit=ft.BoxFit.CONTAIN,
+                     )
+            page.add(img)
+            page.update()
             pygame.mixer.music.load("win.mp3")
             pygame.mixer.music.play(0)
 

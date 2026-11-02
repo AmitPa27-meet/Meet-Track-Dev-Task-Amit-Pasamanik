@@ -21,7 +21,8 @@ what to download for it to function?:
 Pygame
 Flet 
 6 audio files - Play with me (Dan Salvato), Sayonara! (Dan salvato), sinner's finale, noga's recording, ben's recording, ohayo sayori! (Dan Salvato)
-and 3 pictures.
+and 4 pictures.
+(im so sorry you have to download these horrible pictures lmao)
 
 how to run it?:
 run it using the run button . simple, aint it?
