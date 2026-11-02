@@ -12,6 +12,7 @@ noga - plays audio
 ben - plays audio
 july
 monika (plays audio + adds picture) - (writing this twice jumpscares you (low effort but ok haha and also corny so plz forgive me)) + changes title of app
+additionaly - if you write monika and wait 45 seconds - she starts getting bigger taking up more space and eventually jumpscares you (also corny and low effort but its ok)
 the code is : 0710 .
 also - use "amit we love your game" to ACTUALLY win the game, and get an infinite counter(easter egg  when you get to 15 clicks!) c:
 

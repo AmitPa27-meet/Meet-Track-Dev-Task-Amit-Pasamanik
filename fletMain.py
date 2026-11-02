@@ -1,6 +1,8 @@
 
+import asyncio
 import flet as ft
 import pygame
+
 
 def main(page: ft.Page):
     counter = ft.Text("0", size=50, data=0)
@@ -15,9 +17,11 @@ def main(page: ft.Page):
     )
     limit = True
     limitpic = True
+    currnetly_playing = None
     def check_word(e):
         nonlocal limit
         nonlocal limitpic
+        nonlocal currnetly_playing
         typed_text = (e.control.value or "").strip().lower()
 
         secrets = {
@@ -38,7 +42,7 @@ def main(page: ft.Page):
                 "color": ft.Colors.YELLOW,
             },
             "just monika": {
-                "text": "Hey! its me, Monika! heres the first hint for the code! The cod is Amit's birthday month and date in numbers! (MMDD)",
+                "text": "Hey! its me, Monika! heres the first hint for the code! The code is Amit's birthday month and date in numbers! (MMDD)",
                 "color": ft.Colors.PINK,
             },
             "monika": {
@@ -72,22 +76,94 @@ def main(page: ft.Page):
                  
         if typed_text == "amit we love your app":
             pygame.mixer.music.load("win.mp3")
+            currently_playing = "win"
             pygame.mixer.music.play(0)
             page.add(ft.Container(bgcolor=ft.Colors.GREEN, width=500, height=40, content=ft.Text("Achievement Unlocked: The End?", size=20, color=ft.Colors.WHITE)))
             limit = False
         if typed_text == "furina":
                 pygame.mixer.music.load("sinner.mp3")
+                currently_playing = "sinner"
                 pygame.mixer.music.play(0)
-                page.title = "Furina's Counter App"
+                page.title = "Furina's Counter App!"
                 page.bgcolor = ft.Colors.BLUE
         if typed_text == "noga":
                 pygame.mixer.music.load("noga.mp3")
+                currently_playing = "noga"
                 pygame.mixer.music.play(0)
         if typed_text == "ben":
                 pygame.mixer.music.load("ben.mp3")
+                currently_playing = "ben"
                 pygame.mixer.music.play(0)
         if typed_text == "monika":
+            def add_image(x, y):
+                 img = ft.Image(
+                                                                                                     src="monika.jpg",
+                                                                                                     width=x,
+                                                                                                     height=y,
+                                                                                                     fit=ft.BoxFit.CONTAIN,
+                                                                                                 )
+                 page.add(img)
+                 
+                 
+            async def jumpscare():
+                await asyncio.sleep(10)
+                page.clean()
+                img = ft.Image(
+                                                                    src="monika.jpg",
+                                                                    width=450,
+                                                                    height=450,
+                                                                    fit=ft.BoxFit.CONTAIN,
+                                                                )
+                page.add(img)
+                if(currently_playing != "play"):
+                    pygame.mixer.music.load("play.mp3")
+                    pygame.mixer.music.play(-1)
+                page.add(ft.Text("Aha, sorry! just needed a bit more space!..", size=50, color=ft.Colors.GREEN))
+                page.update()
+                await asyncio.sleep(5)
+                page.clean()
+                page.title = "Monika!"
+                img = ft.Image(
+                                                                                    src="monika.jpg",
+                                                                                    width=550,
+                                                                                    height=550,
+                                                                                    fit=ft.BoxFit.CONTAIN,
+                                                                                )
+                page.add(img)
+                page.bgcolor = ft.Colors.BROWN
+                page.add(ft.Text("just.. need... more.. standby..", size=50, color=ft.Colors.GREEN))
+                page.update()
+                await asyncio.sleep(5)
+                page.clean()
+                add_image(700, 700)
+                page.update()
+                await asyncio.sleep(5)
+                page.clean()
+                add_image(1000, 1000)
+                page.update()
+                await asyncio.sleep(5)
+                page.title = "what took you so long?" 
+                page.clean()
+                page.update()
+                page.bgcolor = ft.Colors.RED
+                img = ft.Image(
+                                                    src="jumpscare.jpeg",
+                                                    width=1500,
+                                                    height=790,
+                                                    fit=ft.BoxFit.CONTAIN,
+                                                )
+                page.add(img)
+                page.update()
+                pygame.mixer.music.fadeout(200)
+                pygame.mixer.music.load("sayonara.mp3")
+                pygame.mixer.music.play(-1)
+                await asyncio.sleep(15)
+                await page.window.close()
+            
+                
+            page.bgcolor = ft.Colors.WHITE
             pygame.mixer.music.load("play.mp3")
+            currently_playing = "play"
             pygame.mixer.music.play(-1)
             if limitpic:
                 limitpic = False
@@ -98,8 +174,37 @@ def main(page: ft.Page):
                 fit=ft.BoxFit.CONTAIN,
             )
                 page.add(img)
+                page.run_task(jumpscare)
                 page.update()
             else:
+                async def remove_image():
+                    await asyncio.sleep(15)
+                    page.clean()
+                    page.title = "Monika!"
+                    img = ft.Image(
+                                    src="monika.jpg",
+                                    width=1500,
+                                    height=790,
+                                    fit=ft.BoxFit.CONTAIN,
+                                )
+                    page.add(img)
+                    page.bgcolor = ft.Colors.BROWN
+                    page.update()
+                    pygame.mixer.music.load("play.mp3")
+                    pygame.mixer.music.play(-1)
+                    page.update()
+                    await asyncio.sleep(15)
+                    pygame.mixer.music.fadeout(1000)
+                    page.clean()
+                    page.title = "Game Over!"
+                    page.add(ft.Text("why are you still here?", size=50, color=ft.Colors.RED))
+                    page.update()
+                    await asyncio.sleep(5)
+                    page.clean()
+                    page.bgcolor = ft.Colors.BLACK
+                    page.add(ft.Text("bye bye!", size=50, color=ft.Colors.WHITE))
+                    await asyncio.sleep(1.5)
+                    await page.window.close()
                 page.clean()
                 page.bgcolor = ft.Colors.RED
                 pygame.mixer.music.load("sayonara.mp3")
@@ -110,8 +215,10 @@ def main(page: ft.Page):
                 height=790,
                 fit=ft.BoxFit.CONTAIN,
             )
-                page.title = "Just Monika"
+                page.title = "Just Monika."
                 page.add(img)
+                page.update()
+                page.run_task(remove_image)
                 page.update()
                 
                 
